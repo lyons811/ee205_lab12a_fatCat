@@ -51,6 +51,9 @@ public:
     static float fromSlugToPound (float slug) noexcept ;
     static float fromPoundToSlug (float pound) noexcept ;
     static float covertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept ;
+
+    void setUnitOfWeight(UnitOfWeight unitOfWeight);
+
 private:
     void setMaxWeight(float newMaxWeight);
     bool blsKnown = false ;
