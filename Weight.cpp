@@ -26,9 +26,8 @@ const string Weight::SLUG_LABEL = "Slug" ;
 
 
 int main () {
-    cout << "hello" << endl ;
-    Weight  myWeight( 3.14, Weight::KILO, 20 );
-    myWeight.dump();
+    Weight weight( 0.5, Weight::KILO, 2 ) ;
+    weight.dump();
 
 
     return 0;
