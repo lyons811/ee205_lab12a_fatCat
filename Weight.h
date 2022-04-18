@@ -16,7 +16,7 @@ using namespace std ;
 
 class Weight {
 public:
-    enum UnitOfWeight {Pound, KILO, SLUG};
+    enum UnitOfWeight {POUND, KILO, SLUG};
     static const float KILOS_IN_A_POUND ;
     static const float SLUGS_IN_A_POUND ;
     static const float UNKNOWN_WEIGHT ;
@@ -40,17 +40,17 @@ public:
     void 	setWeight (float newWeight, UnitOfWeight weightUnits) ;
     bool 	isWeightValid (float checkWeight) const noexcept ;
     bool 	validate () const noexcept ;
-    void 	dump () const noexcept ;
+    void dump () const ;
     bool 	operator== (const Weight &rhs_Weight) const ;
     bool 	operator< (const Weight &rhs_Weight) const ;
-    Weight  operator+= (float rhs_addToWeight) ;
+    Weight&  operator+= (float rhs_addToWeight) ;
 
 
     static float fromKilogramToPound(float kilogram) noexcept ;
     static float fromPoundToKilogram (float pound) noexcept ;
     static float fromSlugToPound (float slug) noexcept ;
     static float fromPoundToSlug (float pound) noexcept ;
-    static float covertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept ;
+    static float convertWeight(float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit) noexcept ;
 
     void setUnitOfWeight(UnitOfWeight unitOfWeight);
 
@@ -58,7 +58,7 @@ private:
     void setMaxWeight(float newMaxWeight);
     bool blsKnown = false ;
     bool bHasMax = false ;
-    enum UnitOfWeight unitOfWeight = Pound ;
+    enum UnitOfWeight unitOfWeight = POUND ;
     float weight {};
     float maxWeight {};
 
